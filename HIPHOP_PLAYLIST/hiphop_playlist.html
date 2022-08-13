@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="hiphop_playlist.css" />
+    <script src="hiphop_playlist.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="titleimg.ico" />
+    <title>HIPHOP_PLAYLIST</title>
+  </head>
+
+  <body>
+    <h1>HIPHOP PLAYLIST</h1>
+    <div class="container">
+      <div id="a1" class="set">
+        <p>Next Episode<br />Dr.dre & Snoop Dogg & Kurupt & Nate Dogg</p>
+      </div>
+      <div id="a2" class="set">
+        <p>
+          Write This Down<br />The Notorious B.I.G. & 2Pac, Xzibit & SoulChef
+        </p>
+      </div>
+      <div id="a3" class="set">
+        <p>Stan<br />Eminem</p>
+      </div>
+      <div id="a4" class="set">
+        <p>Who Am I?<br />Snoop Dogg</p>
+      </div>
+      <div id="a5" class="set">
+        <p>This is America<br />Childish Gambino</p>
+      </div>
+      <div id="a6" class="set">
+        <p>Rocster<br />Post Malone & 21 Savage</p>
+      </div>
+      <div id="a7" class="set">
+        <p>Laugh Now Cry Later<br />Drake & Lil Durk</p>
+      </div>
+      <div id="a8" class="set">
+        <p>N95<br />Kendrick Lamar</p>
+      </div>
+      <div id="a9" class="set">
+        <p>Humble<br />Kendrick Lamar</p>
+      </div>
+      <div id="a10" class="set">
+        <p>Die For you<br />Weekend</p>
+      </div>
+      <div id="a11" class="set">
+        <p>'Till I Collapse<br />Eminem</p>
+      </div>
+      <div id="a12" class="set"><p>With Out Me & Eminem</p></div>
+      <div class="contents1">
+        <button id="btn1" onclick="show('a1')">
+          <img src="1.next_episode.jpg" />
+        </button>
+        <button id="btn2" onclick="show('a2')">
+          <img src="3.wirte_this_down.jpg" />
+        </button>
+        <button id="btn3" onclick="show('a3')">
+          <img src="4.stan.jpg" />
+        </button>
+      </div>
+
+      <div class="contents2">
+        <button id="btn4" onclick="show('a4')">
+          <img src="5.who_am_i.jpg" />
+        </button>
+        <button id="btn5" onclick="show('a5')">
+          <img src="7.this_is_america.jpg" />
+        </button>
+        <button id="btn6" onclick="show('a6')">
+          <img src="8.rocster.jpg" />
+        </button>
+      </div>
+
+      <div class="contents3">
+        <button id="btn7" onclick="show('a7')">
+          <img src="9.laugh_now_cry_later.jpg" />
+        </button>
+        <button id="btn8" onclick="show('a8')">
+          <img src="11.N95.jpg" />
+        </button>
+        <button id="btn9" onclick="show('a9')">
+          <img src="12.humble.jpg" />
+        </button>
+      </div>
+
+      <div class="contents4">
+        <button id="btn10" onclick="show('a10')">
+          <img src="13.die_for_you.jpg" />
+        </button>
+        <button id="btn11" onclick="show('a11')">
+          <img src="14.`till_i_collapse.jpg" />
+        </button>
+        <button id="btn12" onclick="show('a12')">
+          <img src="16.without_me.jpg" />
+        </button>
+      </div>
+      <button><img src="X.png" /></button>
+    </div>
+    <script>
+      function show(id) {
+        let imgDiv = document.getElementById(`${id}`);
+        imgDiv.style.display = "block";
+        window.scrollTo(0, 0);
+        for (let i = 1; i <= 12; i++) {
+          let img = document.getElementById("a" + `${i}`);
+          if ("a" + `${i}` != id) {
+            img.style.display = "none";
+          }
+        }
+      }
+
+      for (let i = 1; i <= 12; i++) {
+        document.getElementById("btn" + `${i}`).style.filter = "blur(5px)";
+
+        document
+          .getElementById("btn" + `${i}`)
+          .addEventListener("mouseover", function () {
+            document.getElementById("btn" + `${i}`).style.transitionDuration =
+              "0.2s";
+            document.getElementById(
+              "btn" + `${i}`
+            ).style.transitionTimingFunction = "ease-out";
+            document.getElementById("btn" + `${i}`).style.scale = "1.15";
+            document.getElementById("btn" + `${i}`).style.filter = "blur(0px)";
+          });
+
+        document
+          .getElementById("btn" + `${i}`)
+          .addEventListener("mouseleave", function () {
+            document.getElementById("btn" + `${i}`).style.transitionDuration =
+              "0.1s";
+            document.getElementById(
+              "btn" + `${i}`
+            ).style.transitionTimingFunction = "ease-out";
+            document.getElementById("btn" + `${i}`).style.scale = "1";
+            document.getElementById("btn" + `${i}`).style.filter = "blur(5px)";
+          });
+      }
+    </script>
+  </body>
+</html>
