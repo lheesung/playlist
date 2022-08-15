@@ -98,7 +98,6 @@
           <img src="16.without_me.jpg" />
         </button>
       </div>
-      <button><img src="X.png" /></button>
     </div>
     <script>
       function show(id) {
@@ -107,23 +106,17 @@
         window.scrollTo(0, 0);
         for (let i = 1; i <= 12; i++) {
           let img = document.getElementById("a" + `${i}`);
-          if ("a" + `${i}` != id) {
+          if ("a" + `${i}` != id)
             img.style.display = "none";
-          }
         }
       }
 
       for (let i = 1; i <= 12; i++) {
-        document.getElementById("btn" + `${i}`).style.filter = "blur(5px)";
+        document.getElementById("btn" + `${i}`).style.filter = "blur(2px)";
 
-        document
-          .getElementById("btn" + `${i}`)
-          .addEventListener("mouseover", function () {
-            document.getElementById("btn" + `${i}`).style.transitionDuration =
-              "0.2s";
-            document.getElementById(
-              "btn" + `${i}`
-            ).style.transitionTimingFunction = "ease-out";
+        document.getElementById("btn" + `${i}`).addEventListener("mouseover", function () {
+            document.getElementById("btn" + `${i}`).style.transitionDuration ="0.4s";
+            document.getElementById("btn" + `${i}`).style.transitionTimingFunction = "linear";
             document.getElementById("btn" + `${i}`).style.scale = "1.15";
             document.getElementById("btn" + `${i}`).style.filter = "blur(0px)";
           });
@@ -131,11 +124,8 @@
         document
           .getElementById("btn" + `${i}`)
           .addEventListener("mouseleave", function () {
-            document.getElementById("btn" + `${i}`).style.transitionDuration =
-              "0.1s";
-            document.getElementById(
-              "btn" + `${i}`
-            ).style.transitionTimingFunction = "ease-out";
+            document.getElementById("btn" + `${i}`).style.transitionDuration ="0.1s";
+            document.getElementById("btn" + `${i}`).style.transitionTimingFunction = "ease-out";
             document.getElementById("btn" + `${i}`).style.scale = "1";
             document.getElementById("btn" + `${i}`).style.filter = "blur(5px)";
           });
